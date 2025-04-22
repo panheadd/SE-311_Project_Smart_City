@@ -25,7 +25,9 @@ public class CityLeaf implements CityComponent {
     }
 
     public void addSensor(Sensor sensor){
-        this.sensors.add(sensor);
+        if (sensor != null){
+            this.sensors.add(sensor);
+        }
     }
     public CityLeaf(String name) {
         this.name = name;

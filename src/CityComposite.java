@@ -10,7 +10,9 @@ public class CityComposite implements CityComponent{
     }
     @Override
     public void add(CityComponent c) {
-        children.add(c);
+        if (c != null){
+            children.add(c);
+        }
     }
     @Override
     public void remove(CityComponent c) {
