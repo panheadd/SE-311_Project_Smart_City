@@ -25,4 +25,7 @@ public class Citizen implements Observer{
     public String getName() {
         return this.name;
     }
+    public Citizen(String name){
+        this.name = name;
+    }
 }
