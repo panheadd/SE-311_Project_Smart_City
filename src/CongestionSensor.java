@@ -1,26 +1,38 @@
 import java.util.List;
 
 public class CongestionSensor extends Sensor{
-    private int carSpeeds = 200;
+    private int carSpeeds = 1;
 
     @Override
     public void checkStatus() {
-        setMalfunctioning(true);
-        System.out.println("Checking Status For Congestion Sensor....");
-        if (carSpeeds<0){
-            Notify("Congestion Rises Car Speeds are above 10 KM/H ... Car Speeds : "+getCarSpeeds());
+        System.out.println("Checking Status For Congestion Sensor "+ getName());
+        if (!isMalfunctioning()){
+            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
         }
-        setMalfunctioning(false);
+        else{
+            System.out.println("Sensor "+ getName() +" is Malfunctioning");
+        }
     }
 
     @Override
     public void reset() {
         System.out.println("Resetting Congestion Sensor....");
-        setMalfunctioning(false);
+        setMalfunctioning(true);
     }
 
     public int getCarSpeeds() {
         return this.carSpeeds;
+    }
+    public void setCarSpeeds(int carSpeeds){
+        if (isMalfunctioning()){
+            this.carSpeeds = carSpeeds;
+            if (carSpeeds<10){
+                Notify("Congestion Level rises, car speeds below 10 KM/H... Car Speeds : "+getCarSpeeds()+ "dB");
+            }
+        }
+        else {
+            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
+        }
     }
 
     public CongestionSensor(String name){
