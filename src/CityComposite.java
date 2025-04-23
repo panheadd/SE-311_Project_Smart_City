@@ -30,17 +30,4 @@ public class CityComposite implements CityComponent {
         this.children = new ArrayList<>();
     }
 
-    @Override
-    public int calculateMalfunctioningSensors() {
-        int malfunctioning = 0;
-        for (CityComponent c : children)
-            malfunctioning += c.calculateMalfunctioningSensors();
-        return malfunctioning;
-    }
-
-    @Override
-    public void resetAllSensors() {
-        for (CityComponent c : children)
-            c.resetAllSensors();
-    }
 }

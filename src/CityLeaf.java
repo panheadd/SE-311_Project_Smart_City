@@ -38,18 +38,4 @@ public class CityLeaf implements CityComponent {
         this.sensors = sensors;
     }
 
-    @Override
-    public int calculateMalfunctioningSensors() {
-        int malfunctioning = 0;
-        for (Sensor s : sensors)
-            if (s.isMalfunctioning())
-                malfunctioning++;
-        return malfunctioning;
-    }
-
-    @Override
-    public void resetAllSensors() {
-        for (Sensor s : sensors)
-            s.reset();
-    }
 }
