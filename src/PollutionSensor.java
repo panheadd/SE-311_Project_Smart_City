@@ -5,22 +5,34 @@ public class PollutionSensor extends Sensor{
 
     @Override
     public void checkStatus() {
-        setMalfunctioning(true);
-        System.out.println("Checking Status For Pollution Sensor....");
-        if (AQI<0){
-            Notify("Pollution AQI Rises above 100 ... AQI : "+getAQI());
+        System.out.println("Checking Status For Pollution Sensor "+ getName());
+        if (!isMalfunctioning()){
+            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
         }
-        setMalfunctioning(false);
+        else{
+            System.out.println("Sensor "+ getName() +" is Malfunctioning");
+        }
     }
 
     @Override
     public void reset() {
         System.out.println("Resetting Pollution Sensor....");
-        setMalfunctioning(false);
+        setMalfunctioning(true);
     }
 
     public int getAQI() {
         return this.AQI;
+    }
+    public void setAQI(int AQI){
+        if (isMalfunctioning()){
+            this.AQI = AQI;
+            if (AQI>100){
+                Notify("AQI rises above 100... AQI : "+getAQI());
+            }
+        }
+        else {
+            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
+        }
     }
 
     public PollutionSensor(String name){

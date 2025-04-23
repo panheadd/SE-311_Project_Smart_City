@@ -5,22 +5,34 @@ public class NoiseSensor extends Sensor{
 
     @Override
     public void checkStatus() {
-        setMalfunctioning(true);
-        System.out.println("Checking Status For Noise Sensor....");
-        if (noiseLevel<0){
-            Notify("Noise Level is above 85dB ... Noise Level : "+getNoiseLevel());
+        System.out.println("Checking Status For Noise Sensor "+ getName());
+        if (!isMalfunctioning()){
+            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
         }
-        setMalfunctioning(false);
+        else{
+            System.out.println("Sensor "+ getName() +" is Malfunctioning");
+        }
     }
 
     @Override
     public void reset() {
         System.out.println("Resetting Noise Sensor....");
-        setMalfunctioning(false);
+        setMalfunctioning(true);
     }
 
     public int getNoiseLevel() {
         return this.noiseLevel;
+    }
+    public void setNoiseLevel(int noiseLevel){
+        if (isMalfunctioning()){
+            this.noiseLevel = noiseLevel;
+            if (noiseLevel>85){
+                Notify("Noise Level rises above 85dB... Noise Level : "+getNoiseLevel()+ "dB");
+            }
+        }
+        else {
+            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
+        }
     }
 
     public NoiseSensor(String name){

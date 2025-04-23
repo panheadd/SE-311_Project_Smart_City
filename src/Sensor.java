@@ -44,12 +44,12 @@ public abstract class Sensor {
 
     public Sensor(String name){
         this.name = name;
-        this.malfunctioning = false;
+        this.malfunctioning = true;
         this.observers = new ArrayList<>();
     }
     public Sensor(String name,List<Observer> observers){
         this.name = name;
-        this.malfunctioning = false;
+        this.malfunctioning = true;
         this.observers = observers;
     }
 

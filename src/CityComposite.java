@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class CityComposite implements CityComponent{
+public class CityComposite implements CityComponent {
     private String name;
     private List<CityComponent> children;
     @Override
