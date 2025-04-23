@@ -5,5 +5,7 @@ public interface CityComponent {
     public void add(CityComponent c);
     public void remove(CityComponent c);
     public List<Sensor> getSensors();
+    public int calculateMalfunctioningSensors();
+    public void resetAllSensors();
 
 }
