@@ -4,17 +4,25 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+        Citizen c = new Citizen("citizen");
+
         SensorFactory tempFac = new TemperatureSensorFactory();
         SensorFactory polFac = new PollutionSensorFactory();
         SensorFactory congFac = new CongestionSensorFactory();
         SensorFactory noiseFac = new NoiseSensorFactory();
         BuildSensor bs = new BuildSensor();
         List<Sensor> sensor = new ArrayList<>();
-        sensor.add(bs.createSensor(tempFac));
+
+        TemperatureSensor ts = (TemperatureSensor)  bs.createSensor(tempFac);
+        sensor.add(ts);
         sensor.add(bs.createSensor(polFac));
         sensor.add(bs.createSensor(congFac));
         sensor.add(bs.createSensor(noiseFac));
 
+        sensor.get(0).attach(c);
+        sensor.get(0).setValue(-10);
+        sensor.get(1).attach(c);
+        sensor.get(1).setValue(1000);
 
 
         CityComponent city = new CityComposite("İzmir");

@@ -20,6 +20,19 @@ public class CongestionSensor extends Sensor{
         setMalfunctioning(true);
     }
 
+    @Override
+    public void setValue(int carSpeeds) {
+        if (isMalfunctioning()){
+            this.carSpeeds = carSpeeds;
+            if (carSpeeds<10){
+                Notify("Congestion Level rises, car speeds below 10 KM/H... Car Speeds : "+getCarSpeeds()+ "dB");
+            }
+        }
+        else {
+            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
+        }
+    }
+
     public int getCarSpeeds() {
         return this.carSpeeds;
     }

@@ -26,6 +26,8 @@ public abstract class Sensor {
     public abstract void checkStatus();
     public abstract void reset();
 
+    public abstract void setValue(int value);
+
     public String getName() {
         return this.name;
     }

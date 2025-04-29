@@ -20,6 +20,19 @@ public class PollutionSensor extends Sensor{
         setMalfunctioning(true);
     }
 
+    @Override
+    public void setValue(int AQI) {
+        if (isMalfunctioning()){
+            this.AQI = AQI;
+            if (AQI>100){
+                Notify("AQI rises above 100... AQI : "+getAQI());
+            }
+        }
+        else {
+            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
+        }
+    }
+
     public int getAQI() {
         return this.AQI;
     }

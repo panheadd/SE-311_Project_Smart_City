@@ -20,6 +20,19 @@ public class NoiseSensor extends Sensor{
         setMalfunctioning(true);
     }
 
+    @Override
+    public void setValue(int noiseLevel) {
+        if (isMalfunctioning()){
+            this.noiseLevel = noiseLevel;
+            if (noiseLevel>85){
+                Notify("Noise Level rises above 85dB... Noise Level : "+getNoiseLevel()+ "dB");
+            }
+        }
+        else {
+            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
+        }
+    }
+
     public int getNoiseLevel() {
         return this.noiseLevel;
     }
