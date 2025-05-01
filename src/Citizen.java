@@ -9,8 +9,8 @@ public class Citizen implements Observer{
         this.sensor = sensor;
         sensorName = this.sensor.getName();
         isSensorMalfunction = this.sensor.isMalfunctioning();
-        System.out.println("Notified " + getName() + " of " + this.sensorName +
-                "'s " + " to " + msg);
+        System.out.println("Notified " + getName() + " of " +" Sensor "+ this.sensorName +
+                "'s " + "to " + msg+"... Sensor Malfunctioning : "+isSensorMalfunction);
     }
 
     public Sensor getSensor() {

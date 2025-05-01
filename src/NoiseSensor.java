@@ -2,24 +2,6 @@ import java.util.List;
 
 public class NoiseSensor extends Sensor{
     private int noiseLevel = 90;
-
-    @Override
-    public void checkStatus() {
-        System.out.println("Checking Status For Noise Sensor "+ getName());
-        if (!isMalfunctioning()){
-            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
-        }
-        else{
-            System.out.println("Sensor "+ getName() +" is Malfunctioning");
-        }
-    }
-
-    @Override
-    public void reset() {
-        System.out.println("Resetting Noise Sensor....");
-        setMalfunctioning(true);
-    }
-
     @Override
     public void setValue(int noiseLevel) {
         if (isMalfunctioning()){

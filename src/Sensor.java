@@ -23,8 +23,18 @@ public abstract class Sensor {
             observers.get(i).update(this,message);
         }
     }
-    public abstract void checkStatus();
-    public abstract void reset();
+    public void checkStatus() {
+        if (!isMalfunctioning()){
+            System.out.println("Checking Status For Sensor " + getName()+ " : "+"Sensor "+ getName() +" is not Malfunctioning");
+        }
+        else{
+            System.out.println("Checking Status For Sensor " + getName()+ " : "+"Sensor "+ getName() +" is Malfunctioning");
+        }
+    }
+    public void reset() {
+        System.out.println("Resetting Sensor "+ getName()+"...");
+        setMalfunctioning(true);
+    }
 
     public abstract void setValue(int value);
 

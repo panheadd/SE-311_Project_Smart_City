@@ -4,23 +4,6 @@ public class TemperatureSensor extends Sensor{
     private int temperature = -10;
 
     @Override
-    public void checkStatus() {
-        System.out.println("Checking Status For Temperature Sensor "+ getName());
-        if (!isMalfunctioning()){
-            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
-        }
-        else{
-            System.out.println("Sensor "+ getName() +" is Malfunctioning");
-        }
-    }
-
-    @Override
-    public void reset() {
-        System.out.println("Resetting Temperature Sensor....");
-        setMalfunctioning(true);
-    }
-
-    @Override
     public void setValue(int temperature) {
         if (isMalfunctioning()){
             this.temperature = temperature;

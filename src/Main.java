@@ -3,8 +3,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
+        List<Observer> observers = new ArrayList<>();
         Citizen c = new Citizen("citizen");
+        observers.add(c);
 
         SensorFactory tempFac = new TemperatureSensorFactory();
         SensorFactory polFac = new PollutionSensorFactory();
@@ -13,16 +14,16 @@ public class Main {
         BuildSensor bs = new BuildSensor();
         List<Sensor> sensor = new ArrayList<>();
 
-        TemperatureSensor ts = (TemperatureSensor)  bs.createSensor(tempFac);
+        Sensor ts =  bs.createSensor(tempFac,"0",observers);
         sensor.add(ts);
-        sensor.add(bs.createSensor(polFac));
-        sensor.add(bs.createSensor(congFac));
-        sensor.add(bs.createSensor(noiseFac));
+        sensor.add(bs.createSensor(polFac,"1",observers));
+        sensor.add(bs.createSensor(congFac,"2",observers));
+        sensor.add(bs.createSensor(noiseFac,"3",observers));
 
-        sensor.get(0).attach(c);
         sensor.get(0).setValue(-10);
-        sensor.get(1).attach(c);
         sensor.get(1).setValue(1000);
+        sensor.get(2).setValue(1);
+        sensor.get(3).setValue(100);
 
 
         CityComponent city = new CityComposite("İzmir");
@@ -40,6 +41,8 @@ public class Main {
         neighbourhood.add(apartment1);
         neighbourhood.add(apartment2);
         city.add(neighbourhood);
+
+        pole2.getSensors().get(0).setValue(-1);
 
         DataMonitoringDivision dmd = DataMonitoringDivision.getInstance();
         Engineer eng = new Engineer();
