@@ -81,6 +81,17 @@ public class Main {
         DataMonitoringDivision dmd = DataMonitoringDivision.getInstance();
         Engineer eng = new Engineer();
         dmd.monitor(city.getSensors());
+
+        ts.setMalfunctioning(false);
+        ps.setMalfunctioning(false);
+        cs.setMalfunctioning(false);
+
+        DataMonitoringDivision dmd1 = DataMonitoringDivision.getInstance();
+        dmd1.monitor(city.getSensors());
+
         eng.resetSensors(city.getSensors());
+
+        DataMonitoringDivision dmd2 = DataMonitoringDivision.getInstance();
+        dmd2.monitor(city.getSensors());
     }
 }
