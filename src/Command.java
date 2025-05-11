@@ -33,6 +33,7 @@ class Engineer {
     private CommandExecutor executor = new CommandExecutor();
 
     public void resetSensors(List<Sensor> sensors){
+        System.out.println("Resetting...");
         for (Sensor s : sensors) {
             executor.runCommand(new ResetCommand(s));
         }
@@ -49,6 +50,7 @@ class DataMonitoringDivision {
     }
 
     public void monitor(List<Sensor> sensors) {
+        System.out.println("Monitoring...");
         int count = 0;
         for (Sensor s : sensors) {
             executor.runCommand(new StatusQueryCommand(s));

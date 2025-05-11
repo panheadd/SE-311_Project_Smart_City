@@ -6,19 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fdd5e04b-1290-47d2-ada8-cdddb94d5b6d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BuildSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuildSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Citizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Citizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CongestionSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CongestionSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CongestionSensorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CongestionSensorFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NoiseSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NoiseSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NoiseSensorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NoiseSensorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PollutionSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PollutionSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PollutionSensorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PollutionSensorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SensorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SensorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TemperatureSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TemperatureSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TemperatureSensorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TemperatureSensorFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
