@@ -4,8 +4,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Observer> observersInApartment1 = new ArrayList<>();
-        Citizen c0 = new Citizen("Citizen 0");
-        Citizen c1 = new Citizen("Citizen 1");
+        Citizen c0 = new Citizen("Citizen 1");
+        Citizen c1 = new Citizen("Citizen 2");
         observersInApartment1.add(c0);
         observersInApartment1.add(c1);
 
@@ -45,8 +45,8 @@ public class Main {
         sensorsOnApartment2.get(3).setValue(110);
 
         Sensor ts =  bs.createSensor(tempFac,"Temperature Sensor on Pole in Balçova");
-        Sensor ps =  bs.createSensor(tempFac,"Pollution Sensor on Pole 1 in Street");
-        Sensor cs =  bs.createSensor(tempFac,"Congestion Sensor on Pole 2 in Street");
+        Sensor ps =  bs.createSensor(polFac,"Pollution Sensor on Pole 1 in Street");
+        Sensor cs =  bs.createSensor(congFac,"Congestion Sensor on Pole 2 in Street");
 
         ts.attach(c4);
         ps.attach(c4);
