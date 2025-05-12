@@ -2,6 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+// YUNUS ERDEM GÖKDAĞ
+// DENİZ  YETİŞ
+// BAŞAR KOCABAŞ
+// FATİH ANAMASLI
+
+
+// Abstract Sensor Subject / Abstract Product / Receiver
 public abstract class Sensor {
     protected String name;
     protected boolean malfunctioning;
@@ -67,7 +75,7 @@ public abstract class Sensor {
 
 }
 
-
+// Concrete Pollution Sensor Subject / Concrete Product / Receiver
 class PollutionSensor extends Sensor{
     private int AQI = 200;
 
@@ -87,17 +95,6 @@ class PollutionSensor extends Sensor{
     public int getAQI() {
         return this.AQI;
     }
-    public void setAQI(int AQI){
-        if (isMalfunctioning()){
-            this.AQI = AQI;
-            if (AQI>100){
-                Notify("AQI rises above 100... AQI : "+getAQI());
-            }
-        }
-        else {
-            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
-        }
-    }
 
     public PollutionSensor(String name){
         super(name);
@@ -107,6 +104,7 @@ class PollutionSensor extends Sensor{
     }
 }
 
+// Concrete Temperature Sensor Subject / Concrete Product / Receiver
 class TemperatureSensor extends Sensor{
     private int temperature = -10;
 
@@ -127,19 +125,6 @@ class TemperatureSensor extends Sensor{
         return this.temperature;
     }
 
-
-    public void setTemperature(int temperature){
-        if (isMalfunctioning()){
-            this.temperature = temperature;
-            if (temperature<0){
-                Notify("Temperature Falls below 0 degrees... Temperature : "+getTemperature());
-            }
-        }
-        else {
-            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
-        }
-    }
-
     public TemperatureSensor(String name){
         super(name);
     }
@@ -148,6 +133,7 @@ class TemperatureSensor extends Sensor{
     }
 }
 
+// Concrete Noise Sensor Subject / Concrete Product / Receiver
 class NoiseSensor extends Sensor{
     private int noiseLevel = 90;
     @Override
@@ -166,17 +152,6 @@ class NoiseSensor extends Sensor{
     public int getNoiseLevel() {
         return this.noiseLevel;
     }
-    public void setNoiseLevel(int noiseLevel){
-        if (isMalfunctioning()){
-            this.noiseLevel = noiseLevel;
-            if (noiseLevel>85){
-                Notify("Noise Level rises above 85dB... Noise Level : "+getNoiseLevel()+ "dB");
-            }
-        }
-        else {
-            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
-        }
-    }
 
     public NoiseSensor(String name){
         super(name);
@@ -185,6 +160,8 @@ class NoiseSensor extends Sensor{
         super(name,observers);
     }
 }
+
+// Concrete Congestion Sensor Subject / Concrete Product / Receiver
 class CongestionSensor extends Sensor{
     private int carSpeeds = 1;
 
@@ -203,17 +180,6 @@ class CongestionSensor extends Sensor{
 
     public int getCarSpeeds() {
         return this.carSpeeds;
-    }
-    public void setCarSpeeds(int carSpeeds){
-        if (isMalfunctioning()){
-            this.carSpeeds = carSpeeds;
-            if (carSpeeds<10){
-                Notify("Congestion Level rises, car speeds below 10 KM/H... Car Speeds : "+getCarSpeeds()+ "dB");
-            }
-        }
-        else {
-            System.out.println("Sensor "+ getName() +" is not Malfunctioning");
-        }
     }
 
     public CongestionSensor(String name){

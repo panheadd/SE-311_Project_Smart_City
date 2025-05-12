@@ -1,9 +1,18 @@
+
+// YUNUS ERDEM GÖKDAĞ
+// DENİZ  YETİŞ
+// BAŞAR KOCABAŞ
+// FATİH ANAMASLI
+
+
+// Abstract Observer
 public interface Observer {
     public void update(Sensor sensor,String msg);
     public String getName();
 }
 
 
+// Concrete Observer
 class Citizen implements Observer{
     private Sensor sensor;
     private String name;

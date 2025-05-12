@@ -1,9 +1,19 @@
 import java.util.List;
 
+
+// YUNUS ERDEM GÖKDAĞ
+// DENİZ  YETİŞ
+// BAŞAR KOCABAŞ
+// FATİH ANAMASLI
+
+
+//Abstract Command
 public interface Command {
     public void execute();
 }
 
+
+//Concrete Reset Command
 class ResetCommand implements Command{
     private Sensor sensor;
     @Override
@@ -14,6 +24,8 @@ class ResetCommand implements Command{
         this.sensor = sensor;
     }
 }
+
+//Concrete Status Query Command
 class StatusQueryCommand implements Command{
     private Sensor sensor;
     @Override
@@ -24,11 +36,15 @@ class StatusQueryCommand implements Command{
         this.sensor = sensor;
     }
 }
+
+//Command Executor Invoker
 class CommandExecutor{
     void runCommand(Command command){
         command.execute();
     }
 }
+
+//Engineer Client
 class Engineer {
     private CommandExecutor executor = new CommandExecutor();
 
@@ -39,6 +55,8 @@ class Engineer {
         }
     }
 }
+
+// DMD Client
 class DataMonitoringDivision {
     private static DataMonitoringDivision instance = new DataMonitoringDivision();
     private CommandExecutor executor = new CommandExecutor();

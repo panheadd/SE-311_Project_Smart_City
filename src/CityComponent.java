@@ -1,6 +1,12 @@
 import java.util.List;
 import java.util.ArrayList;
 
+    // YUNUS ERDEM GÖKDAĞ
+    // DENİZ  YETİŞ
+    // BAŞAR KOCABAŞ
+    // FATİH ANAMASLI
+
+
 //this is abstract component.
 public interface CityComponent {
     public String getName();
@@ -10,6 +16,8 @@ public interface CityComponent {
 
 }
 
+
+//Concrete Composite
 class CityComposite implements CityComponent {
     private String name;
     private List<CityComponent> children;
@@ -40,6 +48,8 @@ class CityComposite implements CityComponent {
     }
 
 }
+
+// Concrete Leaf
 class CityLeaf implements CityComponent {
     private String name;
     private List<Sensor> sensors;

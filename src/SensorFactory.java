@@ -1,11 +1,20 @@
 import java.util.List;
 
+
+// YUNUS ERDEM GÖKDAĞ
+// DENİZ  YETİŞ
+// BAŞAR KOCABAŞ
+// FATİH ANAMASLI
+
+
+// Abstract Sensor Factory
 public abstract class SensorFactory {
     abstract public Sensor createSensor();
     abstract public Sensor createSensor(String name);
     abstract public Sensor createSensor(String name , List<Observer> observers);
 }
 
+// Client
 class BuildSensor {
     private Sensor sensor;
     public Sensor createSensor(SensorFactory sensorFactory){
@@ -24,6 +33,8 @@ class BuildSensor {
         return this.sensor;
     }
 }
+
+//Concrete Congestion Sensor Factory
 class CongestionSensorFactory extends SensorFactory {
     @Override
     public CongestionSensor createSensor() {
@@ -38,10 +49,12 @@ class CongestionSensorFactory extends SensorFactory {
         return new CongestionSensor(name,observers);
     }
 }
+
+//Concrete Noise Sensor Factory
 class NoiseSensorFactory extends SensorFactory {
     @Override
     public NoiseSensor createSensor() {
-        return new NoiseSensor("NoiseSensor");
+        return new NoiseSensor("Noise Sensor");
     }
     @Override
     public NoiseSensor createSensor(String name) {
@@ -52,6 +65,8 @@ class NoiseSensorFactory extends SensorFactory {
         return new NoiseSensor(name,observers);
     }
 }
+
+//Concrete Pollution Sensor Factory
 class PollutionSensorFactory extends SensorFactory {
     @Override
     public PollutionSensor createSensor() {
@@ -66,6 +81,8 @@ class PollutionSensorFactory extends SensorFactory {
         return new PollutionSensor(name,observers);
     }
 }
+
+//Concrete Temperature Sensor Factory
 class TemperatureSensorFactory extends SensorFactory {
     @Override
     public TemperatureSensor createSensor() {

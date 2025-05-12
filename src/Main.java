@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
+// YUNUS ERDEM GÖKDAĞ
+// DENİZ  YETİŞ
+// BAŞAR KOCABAŞ
+// FATİH ANAMASLI
 public class Main {
     public static void main(String[] args) {
         List<Observer> observersInApartment1 = new ArrayList<>();
